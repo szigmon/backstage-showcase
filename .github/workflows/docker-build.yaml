@@ -23,16 +23,15 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  REGISTRY: quay.io
-  PASSWORD_KEY: QUAY_TOKEN
-  USERNAME: ${{ vars.QUAY_USERNAME }}
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.event.repository.name }}
+  IMAGE_TAGS: latest ${{ github.sha }}
+  IMAGE_REGISTRY: quay.io
   IMAGE_NAMESPACE: ${{ secrets.REGISTRY_NAMESPACE }}
-
+  USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+  PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
 
 jobs:
-  docker-build:
-    name: Docker Build Job
+  build-and-push-image:
     runs-on: ubuntu-latest
     permissions:
       contents: read
