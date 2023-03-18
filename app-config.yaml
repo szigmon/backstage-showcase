@@ -138,6 +138,11 @@ catalog:
       target: https://github.com/janus-idp/software-templates/blob/main/showcase-templates.yaml
       rules:
         - allow: [Template]
+        
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/remote-templates.yaml
+      rules:
+        - allow: [Template]
 
   providers:
     keycloakOrg:
@@ -165,6 +170,7 @@ ocm:
     name: ${OCM_HUB_NAME}
     url: ${OCM_HUB_URL}
     serviceAccountToken: ${moc_infra_token}
+  cluster: ${K8S_CLUSTER_NAME}
 
 argocd:
   username: ${ARGOCD_USERNAME}
