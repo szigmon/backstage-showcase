@@ -24,8 +24,8 @@ concurrency:
 
 env:
   REGISTRY: quay.io
-  PASSWORD_KEY: ${{ secrets.QUAY_TOKEN }}
-  USERNAME: ${{ secrets.QUAY_USERNAME }}
+  QUAY_TOKEN: ${{ secrets.QUAY_TOKEN }}
+  QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -49,8 +49,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ env.USERNAME }}
-          password: ${{ secrets[env.PASSWORD_KEY] }}
+          username: ${{ env.QUAY_USERNAME }}
+          password: ${{ env.QUAY_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
