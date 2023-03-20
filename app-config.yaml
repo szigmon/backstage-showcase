@@ -135,7 +135,7 @@ catalog:
         - allow: [System]
 
     - type: url
-      target: https://github.com/szigmon/software-templates/blob/main/showcase-templates.yaml
+      target: https://github.com/szigmon/techtalk-demo/blob/main/software-templates/showcase-templates.yaml
       rules:
         - allow: [Component, System, API, Resource, Location, Template, Group, User, Domain]
         
