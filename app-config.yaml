@@ -1,9 +1,9 @@
 app:
-  title: Janus IDP Backstage Showcase
+  title: RedHat TechTalk Backstage Showcase
   baseUrl: http://localhost:3000
 
 organization:
-  name: Janus IDP
+  name: RedHat TechTalk
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -135,17 +135,12 @@ catalog:
         - allow: [System]
 
     - type: url
-      target: https://github.com/janus-idp/software-templates/blob/main/showcase-templates.yaml
+      target: https://github.com/szigmon/software-templates/blob/main/showcase-templates.yaml
       rules:
         - allow: [Component, System, API, Resource, Location, Template, Group, User, Domain]
         
     - type: url
       target: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/sample-templates/remote-templates.yaml
-      rules:
-        - allow: [Template]
-
-    - type: url
-      target: https://github.com/diegoluisi/backstage-catalog/blob/main/devxp/all.yaml
       rules:
         - allow: [Template]
 
