@@ -174,7 +174,6 @@ ocm:
     name: ${OCM_HUB_NAME}
     url: ${OCM_HUB_URL}
     serviceAccountToken: ${moc_infra_token}
-  cluster: ${K8S_CLUSTER_NAME}
 
 argocd:
   username: ${ARGOCD_USERNAME}
