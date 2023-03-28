@@ -90,7 +90,6 @@ async function main() {
   const appEnv = useHotMemoize(module, () => createEnv('app'));
   const kubernetesEnv = useHotMemoize(module, () => createEnv('kubernetes'));
   const ocmEnv = useHotMemoize(module, () => createEnv('ocm'));
-  const argocdEnv = useHotMemoize(module, () => createEnv('argocd'));
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
