@@ -69,8 +69,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ env.USERNAME }}
-          password: ${{ secrets[env.PASSWORD_KEY] }}
+          username: ${{ env.QUAY_USERNAME }}
+          password: ${{ env.QUAY_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
