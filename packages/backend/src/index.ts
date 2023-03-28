@@ -33,7 +33,6 @@ import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
 import ocm from './plugins/ocm';
-import argocd from './plugins/argocd';
 
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
