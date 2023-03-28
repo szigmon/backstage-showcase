@@ -62,9 +62,14 @@ proxy:
     secure: true
     
   "/argocd/api":
-    # url of the api of your hosted argoCD instance
+    # url to the api of your hosted argoCD instance
     target: ${ARGOCD_API}
     changeOrigin: true
+    # this line is required if your hosted argoCD instance has self-signed certificate
+    secure: true
+    headers:
+      Cookie:
+        $env: ARGOCD_AUTH_TOKEN
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -180,15 +185,15 @@ ocm:
     url: ${OCM_HUB_URL}
     serviceAccountToken: ${moc_infra_token}
 
-argocd:
-  username: ${ARGOCD_USERNAME}
-  password: ${ARGOCD_PASSWORD}
-  appLocatorMethods:
-    - type: 'config'
-      instances:
-        - name: argoInstance1
-          url: ${ARGOCD_INSTANCE1_URL}
-          token: ${ARGOCD_AUTH_TOKEN}
-        - name: argoInstance2
-          url: ${ARGOCD_INSTANCE2_URL}
-          token: ${ARGOCD_AUTH_TOKEN2}
+#argocd:
+#  username: ${ARGOCD_USERNAME}
+#  password: ${ARGOCD_PASSWORD}
+#  appLocatorMethods:
+#    - type: 'config'
+#      instances:
+#        - name: argoInstance1
+#          url: ${ARGOCD_INSTANCE1_URL}
+#          token: ${ARGOCD_AUTH_TOKEN}
+#        - name: argoInstance2
+#          url: ${ARGOCD_INSTANCE2_URL}
+#          token: ${ARGOCD_AUTH_TOKEN2}
