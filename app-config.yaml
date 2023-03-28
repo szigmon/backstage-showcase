@@ -84,7 +84,7 @@ techdocs:
     awsS3:
       bucketName: ${BUCKET_NAME}
       region: ${BUCKET_REGION_VAULT}
-      endpoint: https://s3-openshift-storage.apps.smaug.na.operate-first.cloud
+      endpoint: ${BUCKET_URL}
       s3ForcePathStyle: true
       credentials:
         accessKeyId: ${AWS_ACCESS_KEY_ID}
