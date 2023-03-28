@@ -62,7 +62,7 @@ proxy:
     secure: true
     
   "/argocd/api":
-    # url to the api of your hosted argoCD instance
+    # url of the api of your hosted argoCD instance
     target: ${ARGOCD_API}
     changeOrigin: true
 
